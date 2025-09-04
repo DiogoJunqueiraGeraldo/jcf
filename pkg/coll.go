@@ -63,6 +63,12 @@ type RemovableColl[T comparable] interface {
 	Clear()
 }
 
+// MutableColl is a collection that supports both adding and deleting elements
+type MutableColl[T any] interface {
+	ExtensibleColl[T]
+	RemovableColl[T]
+}
+
 // IterableColl is a collection that supports iterating over elements.
 type IterableColl[T any] interface {
 	Coll[T]
